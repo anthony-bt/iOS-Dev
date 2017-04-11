@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75BB52831E9BCE53000BE982 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB52821E9BCE53000BE982 /* Agency.swift */; };
+		75BB52871E9C48B8000BE982 /* data_travel_agencies.csv in Resources */ = {isa = PBXBuildFile; fileRef = 75BB52861E9C48B8000BE982 /* data_travel_agencies.csv */; };
 		75DD29291E969E300060B79D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD29281E969E300060B79D /* AppDelegate.swift */; };
 		75DD292B1E969E300060B79D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD292A1E969E300060B79D /* ViewController.swift */; };
 		75DD292E1E969E300060B79D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DD292C1E969E300060B79D /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75BB52821E9BCE53000BE982 /* Agency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		75BB52861E9C48B8000BE982 /* data_travel_agencies.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data_travel_agencies.csv; path = ../../../../Desktop/data_travel_agencies.csv; sourceTree = "<group>"; };
 		75DD29251E969E300060B79D /* MapApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD29281E969E300060B79D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DD292A1E969E300060B79D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,12 +62,14 @@
 		75DD29271E969E300060B79D /* MapApplication */ = {
 			isa = PBXGroup;
 			children = (
+				75BB52861E9C48B8000BE982 /* data_travel_agencies.csv */,
 				75DD29281E969E300060B79D /* AppDelegate.swift */,
 				75DD292A1E969E300060B79D /* ViewController.swift */,
 				75DD292C1E969E300060B79D /* Main.storyboard */,
 				75DD292F1E969E300060B79D /* Assets.xcassets */,
 				75DD29311E969E300060B79D /* LaunchScreen.storyboard */,
 				75DD29341E969E300060B79D /* Info.plist */,
+				75BB52821E9BCE53000BE982 /* Agency.swift */,
 			);
 			path = MapApplication;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BB52871E9C48B8000BE982 /* data_travel_agencies.csv in Resources */,
 				75DD29331E969E300060B79D /* LaunchScreen.storyboard in Resources */,
 				75DD29301E969E300060B79D /* Assets.xcassets in Resources */,
 				75DD292E1E969E300060B79D /* Main.storyboard in Resources */,
@@ -155,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75DD292B1E969E300060B79D /* ViewController.swift in Sources */,
+				75BB52831E9BCE53000BE982 /* Agency.swift in Sources */,
 				75DD29291E969E300060B79D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +329,7 @@
 				75DD29391E969E300060B79D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
