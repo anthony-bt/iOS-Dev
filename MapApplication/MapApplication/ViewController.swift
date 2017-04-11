@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var mapView: MKMapView!
     
     var data = [Agency]()
+    var filtered = [Agency]()
+    var searchActive = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +42,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filtered = data.filter({ (agency) -> Bool in
+            let agencyName: String = agency.name
+            return (agencyName.range(of: searchText, options: String.CompareOptions.caseInsensitive, range: nil, locale: nil) != nil) ? true : false
+        })
+        
+        if (filtered.count == 0) {
+            searchActive = false
+        } else {
+            searchActive = true
+        }
+        tableView.reloadData()
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
         searchBar.setShowsCancelButton(true, animated: true)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.endEditing(true)
     }
@@ -99,11 +119,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return (searchActive) ? filtered.count : data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let agency: Agency = data[indexPath.item]
+        let agency: Agency
+        
+        if (searchActive) {
+            agency = filtered[indexPath.item]
+        } else {
+            agency = data[indexPath.item]
+        }
+        
         let cell: UITableViewCell = UITableViewCell (style: UITableViewCellStyle.subtitle, reuseIdentifier: agency.name)
         
         cell.imageView?.image = UIImage(named: "ListIcon")
